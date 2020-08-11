@@ -23,11 +23,11 @@ const breakfastCard = `
 </div>
 `;
 
-const characters = [
+const questions = [
   {
-    name: "Leslie Knope",
-    location: "Pawnee, Indiana",
-    loves: "waffles",
+    question: "What does Leslie like to eat?",
+    answerChoices: ["Waffles", "Ice Cream", "asparagus", "steak"],
+    answer: "Waffles",
   },
   {
     name: "Ron Swanson",
@@ -47,7 +47,17 @@ const characters = [
 ];
 
 for (let i = 0; i < characters.length; i++) {
-  console.log(characters[i].name);
+  const characterCard = `
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">${characters[i].name}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">${characters[i].location}</h6>
+    <p class="card-text">I love ${characters[i].loves}.</p>
+    
+  </div>
+  </div>
+  `;
+  $(".col").append(characterCard);
 }
 
 // $(".col").append(breakfastCard);
